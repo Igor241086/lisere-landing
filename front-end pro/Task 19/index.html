@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Виджет погоды</title>
+</head>
+<body>
+  <div class="weather-widget">
+    <h1>Погода</h1>
+    <div class="controls">
+      <select id="city-select">
+        <option value="Kyiv">Киев</option>
+        <option value="Lviv">Львов</option>
+        <option value="Odessa">Одесса</option>
+        <option value="Dnipro">Днепр</option>
+        <option value="Kharkiv">Харьков</option>
+      </select>
+      <button id="update-button">Обновить</button>
+    </div>
+    <div id="weather-display">
+      <p>Выберите город и нажмите "Обновить".</p>
+    </div>
+  </div>
+</body>
+</html>
