@@ -6,7 +6,6 @@
     "@reduxjs/toolkit": "^2.6.0",
     "axios": "^1.8.1",
     "cra-template-redux": "2.0.0",
-    "json-server": "^1.0.0-beta.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
@@ -20,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "vite"
+    "dev": "vite",
+    "start:server": "json-server --watch db.json --port 5000"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "json-server": "^1.0.0-beta.3",
     "vite": "^6.2.0"
   }
 }

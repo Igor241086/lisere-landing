@@ -1,36 +1,43 @@
-import { call, put, takeEvery } from "redux-saga/effects";
-import { fetchTodos, addTodo, deleteTodo } from "../../api/todosApi";
-import { fetchTodosSuccess, addTodoSuccess, deleteTodoSuccess } from "./todosSlice";
+import { takeLatest, put, call } from 'redux-saga/effects';
+import { fetchTodos, addTodo, deleteTodo, updateTodo, clearTodos } from '../../api/todosApi';
+import {
+  fetchTodosRequest, fetchTodosSuccess, fetchTodosFailure,
+  addTodoSuccess, deleteTodoSuccess, updateTodoSuccess, clearTodosSuccess
+} from './todosSlice';
 
-function* fetchTodosSaga() {
+function* handleFetchTodos() {
   try {
-    const response = yield call(fetchTodos);
-    yield put(fetchTodosSuccess(response.data));
+    const todos = yield call(fetchTodos);
+    yield put(fetchTodosSuccess(todos));
   } catch (error) {
-    console.error("Fetch todos error:", error);
+    yield put(fetchTodosFailure(error.message));
   }
 }
 
-function* addTodoSaga(action) {
-  try {
-    const response = yield call(addTodo, action.payload);
-    yield put(addTodoSuccess(response.data));
-  } catch (error) {
-    console.error("Add todo error:", error);
-  }
+function* handleAddTodo(action) {
+  const newTodo = yield call(addTodo, action.payload);
+  yield put(addTodoSuccess(newTodo));
 }
 
-function* deleteTodoSaga(action) {
-  try {
-    yield call(deleteTodo, action.payload);
-    yield put(deleteTodoSuccess(action.payload));
-  } catch (error) {
-    console.error("Delete todo error:", error);
-  }
+function* handleDeleteTodo(action) {
+  yield call(deleteTodo, action.payload);
+  yield put(deleteTodoSuccess(action.payload));
 }
 
-export function* todosSaga() {
-  yield takeEvery("todos/fetchTodosStart", fetchTodosSaga);
-  yield takeEvery("todos/addTodoSuccess", addTodoSaga);
-  yield takeEvery("todos/deleteTodoSuccess", deleteTodoSaga);
+function* handleUpdateTodo(action) {
+  const updatedTodo = yield call(updateTodo, action.payload.id, action.payload.updates);
+  yield put(updateTodoSuccess(updatedTodo));
+}
+
+function* handleClearTodos() {
+  yield call(clearTodos);
+  yield put(clearTodosSuccess());
+}
+
+export default function* todosSaga() {
+  yield takeLatest('todos/fetchTodosRequest', handleFetchTodos);
+  yield takeLatest('todos/addTodoRequest', handleAddTodo);
+  yield takeLatest('todos/deleteTodoRequest', handleDeleteTodo);
+  yield takeLatest('todos/updateTodoRequest', handleUpdateTodo);
+  yield takeLatest('todos/clearTodosRequest', handleClearTodos);
 }
