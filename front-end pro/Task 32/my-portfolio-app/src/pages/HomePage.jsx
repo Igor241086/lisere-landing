@@ -6,18 +6,26 @@ const HomePage = () => {
   return (
     <Container>
       <Typography variant="h3" gutterBottom>
-      My Resume
+        My Resume
       </Typography>
-      <Resume />
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Paper elevation={3} padding={2}>
+
+      <Grid container spacing={2} direction="column" alignItems="flex-start">
+        <Grid item xs={12}>
+          <Resume />
+        </Grid>
+
+        <Grid item xs={12}>
+          <Paper elevation={3} sx={{ padding: 2, width: '100%', maxWidth: 600 }}>
             <Typography variant="h5">Skills</Typography>
             <ul>
-              <li>JavaScript (React, Node.js)</li>
-              <li>HTML, CSS, Sass</li>
-              <li>Git, GitHub</li>
-              <li>Работа с REST API</li>
+              {[
+                'JavaScript (React, Node.js)',
+                'HTML, CSS, Sass',
+                'Git, GitHub',
+                'Working with REST API',
+              ].map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
             </ul>
           </Paper>
         </Grid>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 
 const Resume = () => {
   return (
-    <div>
+    <Paper elevation={3} sx={{ padding: 2 }}>
       <Typography variant="h5">Information about me</Typography>
-      <p>Description of skills and experience.</p>
-    </div>
+      <Typography variant="body1">Description of skills and experience.</Typography>
+    </Paper>
   );
 };
 
