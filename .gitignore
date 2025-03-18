@@ -4,4 +4,5 @@ node_modules
 Thumbs.db
 *.log
 pet_project
-File1
+flower-shop/src/layouts/
+flower-shop
