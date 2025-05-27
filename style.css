@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#hero {
+    background-image: url('images/6543956790.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: rgb(255, 255, 255);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 1rem;
+    
+}
+
+#logo {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    color: rgb(0, 0, 0);
+}
+
+.hero-content {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.title {
+    font-family: "Abril Fatface", serif;
+    font-size: 6rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    
+}
+
+.subtitle {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+    font-family: "DM Sans", sans-serif;
+    background-color: transparent;
+    border: 1px solid white;
+    color: rgb(255, 255, 255);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.cta-btn:hover {
+    background-color: white;
+    color: black;
+}
