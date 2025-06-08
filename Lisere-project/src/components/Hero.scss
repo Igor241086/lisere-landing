@@ -63,7 +63,7 @@
   font-size: 74.43px;
   line-height: 1;
   letter-spacing: 0;
-  color: #fff;
+  color: #ffffff;
 
   height: 80px;
   display: flex;
@@ -72,6 +72,108 @@
   padding-top: 28px;
 
   white-space: nowrap;
+}
+
+.hero__subtext {
+  grid-column: 6 / span 5;
+  grid-row: 8;
+
+  width: 360px;
+  height: 28px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 21.56px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+  text-align: center;
+
+  justify-self: center;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  top: 57px;
+
+  white-space: nowrap;
+}
+
+.hero__button-container {
+  grid-column: 6 / span 5;
+  grid-row: 10;
+
+  width: 360px;
+  height: 80px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  top: 9px;
+}
+
+.hero__button {
+  width: 312px;
+  height: 60px;
+
+  opacity: 0.79;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 15.4px;
+  border: 0.68px solid rgba(255, 255, 255, 0.39);
+
+  box-shadow: 4.21px 3.51px 7.85px 6.31px rgba(0, 0, 0, 0.41);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 19.53px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+  text-align: center;
+
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25),
+  0 3px 4px rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero__button:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.hero__disclaimer {
+  grid-column: 5 / span 7;
+  grid-row: 12;
+
+  width: 516px;
+  height: 13px;
+
+  font-family: 'Instrument Serif', serif;
+  font-size: 13.28px;
+  line-height: 12.8px;
+  letter-spacing: 21%;
+  color: #fff;
+  text-align: center;
+
+  justify-self: center;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  top: 68px;
+
+  white-space: nowrap;
+  opacity: 0.7;
 }
 
 @keyframes fadeUp {
@@ -89,4 +191,16 @@
 
 .fade-in.delay-1 {
   animation-delay: 0.3s;
+}
+
+.fade-in.delay-2 {
+  animation-delay: 0.5s;
+}
+
+.fade-in.delay-3 {
+  animation-delay: 0.7s;
+}
+
+.fade-in.delay-4 {
+  animation-delay: 0.8s;
 }

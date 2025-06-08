@@ -1,0 +1,9 @@
+@use '../abstracts/variables';
+@use '../layout/grid';
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: #000;
+  $primary-color: #fff;
+}
