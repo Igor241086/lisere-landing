@@ -1,0 +1,17 @@
+@use './variables' as *;
+
+.grid-15 {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 30px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 150px;
+    padding-right: 150px;
+    box-sizing: border-box;
+}
+
+.grid-rows {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 80px);
+}

@@ -1,0 +1,92 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(12, 80px);
+  width: 100%;
+}
+
+.hero__text--main {
+  grid-column: 3 / 14;
+  grid-row: 6;
+
+  width: 828px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: 'Abril Fatface', serif;
+  font-size: 74.43px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  color: #fff;
+
+  height: 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 26px;
+
+  white-space: nowrap;
+}
+
+.hero__text--emotions {
+  grid-column: 5 / 12;
+  grid-row: 7;
+
+  width: 516px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: 'Abril Fatface', serif;
+  font-size: 74.43px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+
+  height: 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 28px;
+
+  white-space: nowrap;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
+}
+
+.fade-in.delay-1 {
+  animation-delay: 0.3s;
+}
