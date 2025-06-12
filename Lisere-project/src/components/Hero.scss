@@ -2,7 +2,7 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
 }
@@ -15,6 +15,7 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   z-index: 1;
 }
 
@@ -23,107 +24,70 @@
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(15, 1fr);
-  grid-template-rows: repeat(12, 80px);
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 150px;
+
+  @media (max-width: 1200px) {
+    padding: 0 80px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+.hero__centered-block {
+  grid-column: 2 / span 13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.hero__text {
+  font-family: 'Abril Fatface', serif;
+  color: #fff;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .hero__text--main {
-  grid-column: 3 / 14;
-  grid-row: 6;
-
-  width: 828px;
-  margin-left: auto;
-  margin-right: auto;
-
-  font-family: 'Abril Fatface', serif;
-  font-size: 74.43px;
-  line-height: 1;
-  letter-spacing: 0;
-  text-align: center;
-  color: #fff;
-
-  height: 80px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 26px;
-
-  white-space: nowrap;
+  font-size: clamp(32px, 6vw, 74.43px);
 }
 
 .hero__text--emotions {
-  grid-column: 5 / 12;
-  grid-row: 7;
-
-  width: 516px;
-  margin-left: auto;
-  margin-right: auto;
-
-  font-family: 'Abril Fatface', serif;
-  font-size: 74.43px;
-  line-height: 1;
-  letter-spacing: 0;
-  color: #ffffff;
-
-  height: 80px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 28px;
-
-  white-space: nowrap;
+  font-size: clamp(32px, 6vw, 74.43px);
 }
 
 .hero__subtext {
-  grid-column: 6 / span 5;
-  grid-row: 8;
-
-  width: 360px;
-  height: 28px;
-
   font-family: 'DM Sans', sans-serif;
-  font-size: 21.56px;
-  line-height: 1;
-  letter-spacing: 0;
+  font-size: clamp(16px, 2.5vw, 21.56px);
   color: #fff;
-  text-align: center;
-
-  justify-self: center;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-
-  position: relative;
-  top: 57px;
-
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    white-space: normal;
+  }
 }
 
 .hero__button-container {
-  grid-column: 6 / span 5;
-  grid-row: 10;
-
-  width: 360px;
-  height: 80px;
-
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-
-  position: relative;
-  top: 9px;
 }
 
 .hero__button {
   width: 312px;
   height: 60px;
-
   opacity: 0.79;
   background-color: rgba(255, 255, 255, 0.04);
   border-radius: 15.4px;
   border: 0.68px solid rgba(255, 255, 255, 0.39);
-
   box-shadow: 4.21px 3.51px 7.85px 6.31px rgba(0, 0, 0, 0.41);
 
   display: flex;
@@ -131,14 +95,12 @@
   justify-content: center;
 
   font-family: 'DM Sans', sans-serif;
-  font-size: 19.53px;
-  line-height: 1;
-  letter-spacing: 0;
+  font-size: clamp(16px, 2vw, 19.53px);
   color: #fff;
   text-align: center;
 
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25),
-  0 3px 4px rgba(0, 0, 0, 0.3);
+               0 3px 4px rgba(0, 0, 0, 0.3);
 
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -151,29 +113,22 @@
 
 .hero__disclaimer {
   grid-column: 5 / span 7;
-  grid-row: 12;
-
-  width: 516px;
-  height: 13px;
-
   font-family: 'Instrument Serif', serif;
   font-size: 13.28px;
   line-height: 12.8px;
-  letter-spacing: 21%;
+  letter-spacing: 0.21em;
   color: #fff;
-  text-align: center;
-
-  justify-self: center;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-
-  position: relative;
-  top: 68px;
-
-  white-space: nowrap;
   opacity: 0.7;
+  text-align: center;
+  justify-self: center;
+  padding-top: 20px;
+  white-space: nowrap;
+  
+  @media (max-width: 768px) {
+    font-size: 10px;
+    white-space: normal;
+    padding: 10px 0;
+  }
 }
 
 @keyframes fadeUp {
@@ -189,18 +144,7 @@
   animation: fadeUp 0.8s forwards;
 }
 
-.fade-in.delay-1 {
-  animation-delay: 0.3s;
-}
-
-.fade-in.delay-2 {
-  animation-delay: 0.5s;
-}
-
-.fade-in.delay-3 {
-  animation-delay: 0.7s;
-}
-
-.fade-in.delay-4 {
-  animation-delay: 0.8s;
-}
+.fade-in.delay-1 {  animation-delay: 0.3s; }
+.fade-in.delay-2 {  animation-delay: 0.5s; }
+.fade-in.delay-3 {  animation-delay: 0.7s; }
+.fade-in.delay-4 {  animation-delay: 0.8s; }
