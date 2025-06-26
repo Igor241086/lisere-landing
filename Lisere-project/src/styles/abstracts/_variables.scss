@@ -1,3 +1,25 @@
+$color-black: #000;
+$color-white: #fff;
+$color-primary: $color-white;
+$color-accent: rgba(255, 255, 255, 0.04);
+$color-border: rgba(255, 255, 255, 0.39);
+$color-shadow: rgba(0, 0, 0, 0.41);
+$color-subtext: rgb(255, 255, 255);
+
 $container-max-width: 1440px;
 $container-padding: 150px;
-$row-height: 80px;
+
+$row-height: 8vh;
+
+$font-heading: 'Abril Fatface', serif;
+$font-body: 'DM Sans', sans-serif;
+$font-disclaimer: 'Instrument Serif', serif;
+
+$font-size-base: 16px;
+$font-size-heading-max: 74.43px;
+$font-size-heading-min: 32px;
+$font-size-subtext-max: 21.56px;
+$font-size-subtext-min: 16px;
+
+$radius-button: 15.4px;
+$border-button: 0.68px solid $color-border;

@@ -9,13 +9,42 @@
   grid-template-rows: repeat($count, $height);
 }
 
-.grid-15 {
+@for $i from 1 through 15 {
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+  .col-span-#{$i} {
+    grid-column-end: span #{$i};
+  }
+}
+
+@for $i from 1 through 13 {
+  .row-start-#{$i} {
+    grid-row-start: #{$i};
+  }
+  .row-span-#{$i} {
+    grid-row-end: span #{$i};
+  }
+}
+
+.grid-cols-15 {
+  @include grid-cols(15);
+}
+
+.grid-rows-13 {
+  @include grid-rows(13);
+}
+
+.grid-15x13 {
   display: grid;
-  grid-template-columns: repeat(15, minmax(0, 1fr));
-  column-gap: 30px;
-  width: 100%;
-  max-width: 1440px;
+  height: 100%;
+  grid-template-columns: repeat(15, 1fr);
+}
+
+.container {
+  max-width: $container-max-width;
   margin: 0 auto;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+  box-sizing: border-box;
 }
