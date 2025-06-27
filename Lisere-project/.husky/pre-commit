@@ -1,0 +1,4 @@
+'#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged' | Out-File -Encoding utf8 -NoNewline .husky\pre-commit
