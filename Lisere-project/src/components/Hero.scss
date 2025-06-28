@@ -104,6 +104,13 @@
   }
 }
 
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -121,4 +128,8 @@
 }
 .fade-in.delay-4 {
   animation-delay: 1.9s;
+}
+
+.fade-out {
+  animation: fadeOut 0.8s forwards;
 }
