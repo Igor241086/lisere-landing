@@ -7,7 +7,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import prettierPlugin from 'eslint-plugin-prettier';
 
 const prettierConfig = JSON.parse(
-  fs.readFileSync(new URL('./.prettierrc', import.meta.url), 'utf-8')
+  fs.readFileSync(new URL('./.prettierrc', import.meta.url), 'utf-8'),
 );
 
 /** @type {import("eslint").Linter.FlatConfig} */

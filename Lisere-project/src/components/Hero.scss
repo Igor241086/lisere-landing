@@ -9,23 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url('../assets/images/hero-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-    z-index: 0;
-  }
-
-  &.hero--loaded::before {
-    opacity: 1;
-  }
 }
 
 .hero__content {
@@ -71,8 +54,8 @@
   white-space: nowrap;
   margin-bottom: clamp(40px, 8vh, 80px);
 
-    @media (max-width: 768px) {
-      white-space: normal;
+  @media (max-width: 768px) {
+    white-space: normal;
   }
 }
 
@@ -99,12 +82,14 @@
   text-align: center;
   white-space: nowrap;
 
-  text-shadow: 
+  text-shadow:
     0 4px 12px rgba(0, 0, 0, 0.25),
     0 3px 4px rgba(0, 0, 0, 0.3);
 
   cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .hero__button:hover {
@@ -125,7 +110,15 @@
   animation: fadeUp 0.8s forwards;
 }
 
-.fade-in.delay-1 {  animation-delay: 1.5s; }
-.fade-in.delay-2 {  animation-delay: 1.6s; }
-.fade-in.delay-3 {  animation-delay: 1.7s; }
-.fade-in.delay-4 {  animation-delay: 1.9s; }
+.fade-in.delay-1 {
+  animation-delay: 1.5s;
+}
+.fade-in.delay-2 {
+  animation-delay: 1.6s;
+}
+.fade-in.delay-3 {
+  animation-delay: 1.7s;
+}
+.fade-in.delay-4 {
+  animation-delay: 1.9s;
+}
