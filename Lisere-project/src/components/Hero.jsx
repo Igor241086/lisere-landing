@@ -13,12 +13,12 @@ const Hero = ({ setIsBlurred, onNext }) => {
     img.onload = () => setLoaded(true);
   }, []);
 
-  const hendleClick = () => {
+  const handleClick = () => {
     setIsExiting(true);
     setTimeout(() => {
       setIsBlurred(true);
       onNext();
-    }, 1000);
+    }, 3000);
   };
 
   return (
@@ -40,7 +40,7 @@ const Hero = ({ setIsBlurred, onNext }) => {
             A future-facing creative research
           </div>
           <div className={`hero__button-container ${isExiting ? 'fade-out' : 'fade-in delay-4'}`}>
-            <button className="hero__button" onClick={hendleClick}>
+            <button className="hero__button" onClick={handleClick}>
               DISCOVER THE CONCEPT
             </button>
           </div>
