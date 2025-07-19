@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './StatementBlock.scss';
 
-const StatementBlock = ({ text }) => {
+const StatementBlock = ({ text, gridClass }) => {
   return (
     <section className="statement">
       <div className="grid-15x13 statement__content">
-        <div className="col-start-2 col-span-13 statement__centered-block">
+        <div className={`${gridClass} statement__centered-block`}>
           <h2 className="statement__text">{text}</h2>
         </div>
       </div>
@@ -16,6 +16,11 @@ const StatementBlock = ({ text }) => {
 
 StatementBlock.propTypes = {
   text: PropTypes.string.isRequired,
+  gridClass: PropTypes.string,
+};
+
+StatementBlock.defaultProps = {
+  gridClass: 'col-start-2 col-span-13',
 };
 
 export default StatementBlock;

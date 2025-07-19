@@ -9,8 +9,21 @@
   text-align: center;
 }
 
+.statement__content {
+  display: contents;
+}
+
+.statement__centered-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
 .statement__text {
   font-family: $font-heading;
   font-size: clamp(20px, 4vw, 48px);
   line-height: 1.2;
+  color: $color-black;
 }

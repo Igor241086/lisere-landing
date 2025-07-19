@@ -26,6 +26,25 @@ const sketches = [
   { image: sketchLookDeTousLesJours, alt: 'Look de tous les jours technical sketch' },
 ];
 
+const statements = [
+  {
+    text: 'LET US DRAW YOUR ATTENTION TO...',
+    gridClass: 'col-start-2 col-span-13',
+  },
+  {
+    text: 'IS TEMPTATION THEIR ONLY PURPOSE?',
+    gridClass: 'col-start-4 col-span-9',
+  },
+  {
+    text: 'FOR THE ELEGANT EVENING — ONLY THE FINEST DETAILS...',
+    gridClass: 'col-start-3 col-span-11',
+  },
+  {
+    text: 'AND WHAT OF EVERYDAY ELEGANCE?',
+    gridClass: 'col-start-5 col-span-7',
+  },
+];
+
 const sections = [
   { Component: SoirDesire, sketch: sketches[0] },
   { Component: CodeVestimentaire, sketch: sketches[1] },
@@ -62,10 +81,10 @@ function App() {
         {currentPage === 'intro' && (
           <>
             <Intro />
-            <StatementBlock text="LET US DRAW YOUR ATTENTION TO A PARTICULAR DESIRE" />
 
             {sections.map(({ Component, sketch }, i) => (
               <React.Fragment key={i}>
+                <StatementBlock text={statements[i].text} gridClass={statements[i].gridClass} />
                 <Component />
                 <MoodSketch image={sketch.image} alt={sketch.alt} />
               </React.Fragment>
