@@ -1,36 +1,83 @@
 @use '../styles/abstracts/variables' as *;
 
 .soir {
-  padding: clamp(60px, 10vh, 120px) 0;
-  background-color: $color-white;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &__content {
-    display: flex;
-    align-items: center;
-    gap: clamp(24px, 5vw, 80px);
-  }
+.soir__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 
-  &__image {
+  img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
   }
+}
 
-  &__text {
-    font-family: $font-body;
-    font-size: clamp(14px, 1.4vw, 18px);
-    color: $color-black;
+.soir__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
 
-    h2 {
-      font-family: $font-heading;
-      font-size: clamp(24px, 4vw, 40px);
-      margin-bottom: 16px;
-    }
+.soir__overlay {
+  background-color: rgba(10, 10, 10, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    p {
-      line-height: 1.6;
-      opacity: 0.85;
-    }
-  }
+  width: 100%;
+  max-width: clamp(282px, 30vw, 438px);
+  padding: 0 clamp(16px, 2vw, 24px);
+}
+
+.soir__text-block {
+  width: 100%;
+  max-width: clamp(240px, 19vw, 282px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.soir__text {
+  font-family: $font-heading;
+  font-weight: 600;
+  color: $color-white;
+  line-height: 1.2;
+
+  white-space: normal;
+  letter-spacing: -0.2px;
+  text-align: center;
+}
+
+.soir__text--title {
+  font-size: clamp($font-size-heading-min, 3.5vw, $font-size-heading-max);
+  margin-bottom: clamp(4px, 0.8vh, 12px);
+  white-space: nowrap;
+}
+
+.soir__text--subtitle {
+  font-size: clamp($font-size-subtext-min, 2.5vw, $font-size-subtext-max);
+  margin-top: clamp(4px, 0.8vh, 12px);
+  margin-bottom: clamp(80px, 8vh, 80px);
+}
+
+.soir__description {
+  font-family: $font-body;
+  font-size: clamp($font-size-subtext-min, 2.5vw, $font-size-subtext-max);
+  color: $color-subtext;
+  white-space: pre-line;
+  text-align: left;
+  line-height: clamp(16px, 1.4vw, 21px);
 }

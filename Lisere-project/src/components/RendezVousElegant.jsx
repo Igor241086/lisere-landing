@@ -5,13 +5,13 @@ import image from '../assets/images/Rendez-vous_Elegant_image.png';
 const RendezVousElegant = () => {
   return (
     <section className="rendezvous">
+      <div className="rendezvous__background">
+        <img src={image} alt="Rendez-vous Élégant" />
+      </div>
       <div className="grid-15x13 rendezvous__content">
-        <div className="col-start-2 col-span-6">
-          <img src={image} alt="Rendez-vous Élégant" className="rendezvous__image" />
-        </div>
-        <div className="col-start-8 col-span-6 rendezvous__text">
-          <h2>Rendez-vous Élégant</h2>
-          <p>
+        <div className="col-start-2 col-span-6 rendezvous__text-block">
+          <h2 className="rendezvous__title">Rendez-vous Élégant</h2>
+          <p className="rendezvous__description">
             A moment poised in elegance. Quiet confidence, subtle gestures, and an ensemble that
             speaks before you do.
           </p>

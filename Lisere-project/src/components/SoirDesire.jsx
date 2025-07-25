@@ -2,23 +2,39 @@ import React from 'react';
 import './SoirDesire.scss';
 import image from '../assets/images/Soir_Desire_image.png';
 
-const SoirDesire = () => {
-  return (
-    <section className="soir">
-      <div className="grid-15x13 soir__content">
-        <div className="col-start-2 col-span-6">
-          <img src={image} alt="Soir Desire" className="soir__image" />
-        </div>
-        <div className="col-start-8 col-span-6 soir__text">
-          <h2>Soir Desire</h2>
-          <p>
-            Night unveils more than elegance — it awakens allure. A curated scene where charm and
-            confidence meet under the city lights.
+const SoirDesire = () => (
+  <section className="soir">
+    <div className="soir__background">
+      <img src={image} alt="Soir Désiré" />
+    </div>
+    <div className="grid-15x13 soir__content">
+      <div className="soir__overlay col-start-9 col-span-5">
+        <div className="soir__text-block">
+          <h2 className="soir__text soir__text--title">“Soir Désiré”</h2>
+          <p className="soir__text soir__text--subtitle">(“Desired Evening”)</p>
+          <p className="soir__description">
+            A collection for an evening that needs no occasion.
+            <br />
+            <br />
+            White marble, candlelight, soft shadows, and the whisper of silk.
+            <br />
+            <br />
+            It captures that one fleeting moment when you’re not playing a role — you’re simply
+            yourself.
+            <br />
+            <br />
+            Gentleness, confidence, and the delicate scent of wine and silence.
+            <br />
+            <br />
+            This is more than just an outfit — it’s a ritual.
+            <br />
+            <br />
+            Your own private ceremony of beauty.
           </p>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default SoirDesire;

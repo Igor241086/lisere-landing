@@ -13,7 +13,7 @@ $row-height: 8vh;
 
 $font-heading: 'Abril Fatface', serif;
 $font-body: 'DM Sans', sans-serif;
-$font-disclaimer: 'Instrument Serif', serif;
+$font-description: 'Instrument Serif', serif;
 
 $font-size-base: 16px;
 $font-size-heading-max: 74.43px;
@@ -23,3 +23,41 @@ $font-size-subtext-min: 16px;
 
 $radius-button: 15.4px;
 $border-button: 0.68px solid $color-border;
+
+$section-height: 100vh;
+$section-padding-y: clamp(40px, 8vw, 96px);
+$section-gap-y: clamp(12px, 2vh, 24px);
+
+$heading-font-size: clamp(24px, 4vw, 40px);
+$text-font-size: clamp(14px, 1.4vw, 18px);
+$text-line-height: 1.6;
+
+$image-object-fit: cover;
+$image-object-position: center;
+
+// === Hero-specific additions ===
+$hero-height: 100vh;
+$hero-content-gap: 0;
+$hero-text-line-height: 1;
+$hero-text-letter-spacing: -0.2px;
+$hero-text-white-space: nowrap;
+
+$hero-text-main-margin-bottom: clamp(12px, 2vh, 24px);
+$hero-text-emotions-margin-bottom: clamp(32px, 4.5vh, 48px);
+$hero-subtext-margin-bottom: clamp(40px, 8vh, 80px);
+
+$hero-button-padding-y: clamp(10px, 1.2vw, 16px);
+$hero-button-padding-x: clamp(24px, 2vw, 48px);
+$hero-button-font-size: clamp($font-size-base, 2vw, 19.53px);
+
+$hero-text-shadow:
+  0 4px 12px rgba(0, 0, 0, 0.25),
+  0 3px 4px rgba(0, 0, 0, 0.3);
+
+$hero-transition:
+  opacity 0.3s ease,
+  transform 0.3s ease;
+
+$animation-fade-up-duration: 0.8s;
+$animation-fade-up-translate: 20px;
+$animation-fade-out-translate: -20px;
