@@ -8,7 +8,7 @@ const SoirDesire = () => (
       <img src={image} alt="Soir Désiré" />
     </div>
     <div className="grid-15x13 soir__content">
-      <div className="soir__overlay col-start-9 col-span-5">
+      <div className="soir__overlay col-start-10 col-span-5">
         <div className="soir__text-block">
           <h2 className="soir__text soir__text--title">“Soir Désiré”</h2>
           <p className="soir__text soir__text--subtitle">(“Desired Evening”)</p>

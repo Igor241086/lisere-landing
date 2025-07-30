@@ -16,6 +16,7 @@ import sketchSoirDesire from './assets/images/soirdesire-sketch.png';
 import sketchCodeVestimentaire from './assets/images/code-vestimentaire-sketch.png';
 import sketchRendezVousElegant from './assets/images/rendezvous-elegant-sketch.png';
 import sketchLookDeTousLesJours from './assets/images/look-de-tous-les-jours-sketch.png';
+import heroBg from './assets/images/hero-bg.png';
 
 import './styles/main.scss';
 
@@ -59,7 +60,7 @@ function App() {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/src/assets/images/hero-bg.png';
+    img.src = heroBg;
     img.onload = () => setLoaded(true);
   }, []);
 

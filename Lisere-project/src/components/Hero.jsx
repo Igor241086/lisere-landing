@@ -10,7 +10,6 @@ const Hero = ({ setIsBlurred, onNext }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '';
     img.src = heroBg;
     img.onload = () => setLoaded(true);
   }, []);
