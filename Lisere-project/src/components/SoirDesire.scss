@@ -32,18 +32,17 @@
 
 .soir__overlay {
   background-color: rgba(10, 10, 10, 0.6);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  width: 100%;
+  width: auto;
   max-width: clamp(282px, 30vw, 438px);
   padding: 0 clamp(16px, 2vw, 24px);
 }
 
 .soir__text-block {
-  width: 100%;
-  max-width: clamp(240px, 19vw, 282px);
+  width: clamp(240px, 19vw, 282px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,22 +61,48 @@
 }
 
 .soir__text--title {
-  font-size: clamp($font-size-heading-min, 6vw, $font-size-heading-max);
+  font-size: clamp(20px, 2.56vw, 36.87px);
+  line-height: 46.4px;
+  letter-spacing: 0.13em;
+  display: block;
+  white-space: normal;
   margin-bottom: clamp(4px, 0.8vh, 12px);
-  white-space: nowrap;
+  text-align: center;
 }
 
 .soir__text--subtitle {
-  font-size: clamp($font-size-subtext-min, 2.5vw, $font-size-subtext-max);
+  font-size: clamp(10px, 0.76vw, 10.98px);
+  line-height: 13.8px;
+  letter-spacing: 0.13em;
   margin-top: clamp(4px, 0.8vh, 12px);
   margin-bottom: clamp(80px, 8vh, 80px);
+  text-align: center;
 }
 
 .soir__description {
-  font-family: $font-body;
-  font-size: clamp($font-size-subtext-min, 2.5vw, $font-size-subtext-max);
+  font-family: $font-description;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  width: auto;
+  max-width: clamp(240px, 27.5vw, 396px);
+
+  font-size: clamp(16px, 1.29vw, 18.58px);
+  line-height: clamp(16px, 1.4vw, 21px);
+  letter-spacing: 0.21em;
   color: $color-subtext;
   white-space: pre-line;
   text-align: left;
-  line-height: clamp(16px, 1.4vw, 21px);
+
+  margin: 0;
+  padding: 0;
+}
+
+.soir__description p {
+  margin: 0 0 22px;
+}
+
+.soir__description p:last-child {
+  margin-bottom: 0;
 }
