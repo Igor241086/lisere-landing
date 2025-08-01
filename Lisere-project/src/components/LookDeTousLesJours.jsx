@@ -1,6 +1,6 @@
 import React from 'react';
 import './LookDeTousLesJours.scss';
-import image from '../assets/images/Look_de_tous_les_jours_image.png';
+import image from '../assets/images/look-de-tous-les-jours-image-75.webp';
 
 const LookDeTousLesJours = () => {
   return (

@@ -12,11 +12,11 @@ import LookDeTousLesJours from './components/LookDeTousLesJours.jsx';
 
 import MoodSketch from './components/MoodSketch.jsx';
 
-import sketchSoirDesire from './assets/images/soirdesire-sketch.png';
-import sketchCodeVestimentaire from './assets/images/code-vestimentaire-sketch.png';
-import sketchRendezVousElegant from './assets/images/rendezvous-elegant-sketch.png';
-import sketchLookDeTousLesJours from './assets/images/look-de-tous-les-jours-sketch.png';
-import heroBg from './assets/images/hero-bg.png';
+import sketchSoirDesire from './assets/images/soir-desire-sketch-75.webp';
+import sketchCodeVestimentaire from './assets/images/code-vestimentaire-sketch-75.webp';
+import sketchRendezVousElegant from './assets/images/rendezvous-elegant-sketch-75.webp';
+import sketchLookDeTousLesJours from './assets/images/look-de-tous-les-jours-sketch-75.webp';
+import heroBg from './assets/images/hero-bg-75.webp';
 
 import './styles/main.scss';
 

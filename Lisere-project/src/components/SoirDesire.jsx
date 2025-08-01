@@ -1,6 +1,6 @@
 import React from 'react';
 import './SoirDesire.scss';
-import image from '../assets/images/Soir_Desire_image.png';
+import image from '../assets/images/soir-desire-image-75.webp';
 
 const SoirDesire = () => (
   <section className="soir">

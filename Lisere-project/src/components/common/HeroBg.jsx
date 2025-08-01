@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './HeroBg.scss';
-import bgImage from '../../assets/images/hero-bg-70.webp';
+import bgImage from '../../assets/images/hero-bg-75.webp';
 
 const HeroBg = ({ loaded, isBlurred }) => (
   <div

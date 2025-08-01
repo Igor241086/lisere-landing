@@ -1,6 +1,6 @@
 import React from 'react';
 import './RendezVousElegant.scss';
-import image from '../assets/images/Rendez-vous_Elegant_image.png';
+import image from '../assets/images/rendez-vous-Elegant-image-75.webp';
 
 const RendezVousElegant = () => {
   return (
