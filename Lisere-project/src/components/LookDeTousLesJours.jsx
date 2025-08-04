@@ -3,16 +3,16 @@ import './LookDeTousLesJours.scss';
 import image from '../assets/images/look-de-tous-les-jours-image-75.webp';
 
 const LookDeTousLesJours = () => (
-  <section className="quotidien">
-    <div className="quotidien__background">
+  <section className="look">
+    <div className="look__background">
       <img src={image} alt="Look de tous les jours" />
     </div>
-    <div className="grid-15x13 quotidien__content">
-      <div className="quotidien__overlay col-start-10 col-span-5">
-        <div className="quotidien__text-block">
-          <h2 className="quotidien__text quotidien__text--title">“Look de tous les jours”</h2>
-          <p className="quotidien__text quotidien__text--subtitle">(“Everyday look”)</p>
-          <p className="quotidien__description">
+    <div className="grid-15x13 look__content">
+      <div className="look__overlay col-start-10 col-span-5">
+        <div className="look__text-block">
+          <h2 className="look__text look__text--title">“Look de tous les jours”</h2>
+          <p className="look__text look__text--subtitle">(“Everyday look”)</p>
+          <p className="look__description">
             She’s not in a hurry.
             <br />
             <br />

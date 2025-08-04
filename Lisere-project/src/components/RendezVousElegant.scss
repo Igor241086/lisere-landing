@@ -8,74 +8,100 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  &__background {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+.rendezvous__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
+.rendezvous__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-  &__content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-  }
+.rendezvous__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
 
-  &__overlay {
-    background-color: rgba(10, 10, 10, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: clamp(282px, 30vw, 438px);
-    padding: 0 clamp(16px, 2vw, 24px);
-  }
+.rendezvous__overlay {
+  background-color: rgba(10, 10, 10, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: clamp(282px, 30vw, 438px);
+  padding: 0 clamp(16px, 2vw, 24px);
+}
 
-  &__text-block {
-    width: 100%;
-    max-width: clamp(240px, 19vw, 282px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.rendezvous__text-block {
+  width: 100%;
+  max-width: clamp(240px, 19vw, 282px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  &__text {
-    font-family: $font-heading;
-    font-weight: 600;
-    color: $color-white;
-    line-height: 1.2;
-    white-space: normal;
-    letter-spacing: -0.2px;
-    text-align: center;
-  }
+.rendezvous__text {
+  font-family: $font-heading;
+  font-weight: 600;
+  color: $color-white;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  text-align: center;
+  white-space: normal;
+}
 
-  &__text--title {
-    font-size: clamp($font-size-heading-min, 6vw, $font-size-heading-max);
-    margin-bottom: clamp(4px, 0.8vh, 12px);
-    white-space: nowrap;
-  }
+.rendezvous__text--title {
+  font-size: clamp(18px, 2vw, 25.64px);
+  line-height: clamp(24px, 2.8vw, 32.2px);
+  letter-spacing: 0.03em;
+  display: block;
+  white-space: normal;
+  margin-bottom: clamp(4px, 0.8vh, 12px);
+  text-align: center;
+}
 
-  &__text--subtitle {
-    font-size: clamp($font-size-subtext-min, 2.5vw, $font-size-subtext-max);
-    margin-top: clamp(4px, 0.8vh, 12px);
-    margin-bottom: clamp(80px, 8vh, 80px);
-  }
+.rendezvous__text--subtitle {
+  font-size: clamp(10px, 1vw, 15.8px);
+  line-height: clamp(14px, 1.5vw, 17.4px);
+  letter-spacing: 0.05em;
+  margin-top: clamp(4px, 0.8vh, 12px);
+  margin-bottom: clamp(80px, 8vh, 80px);
+  text-align: center;
+}
 
-  &__description {
-    font-family: $font-body;
-    font-size: clamp($font-size-subtext-min, 2.5vw, $font-size-subtext-max);
-    color: $color-subtext;
-    white-space: pre-line;
-    text-align: left;
-    line-height: clamp(16px, 1.4vw, 21px);
-  }
+.rendezvous__description {
+  font-family: $font-description;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  width: auto;
+  max-width: clamp(240px, 27.5vw, 396px);
+
+  font-size: clamp(16px, 1.29vw, 18.58px);
+  line-height: clamp(16px, 1.4vw, 21px);
+  letter-spacing: 0.21em;
+  color: $color-subtext;
+  white-space: pre-line;
+  text-align: left;
+
+  margin: 0;
+  padding: 0;
+}
+
+.rendezvous__description p {
+  margin: 0 0 22px;
+}
+
+.rendezvous__description p:last-child {
+  margin-bottom: 0;
 }

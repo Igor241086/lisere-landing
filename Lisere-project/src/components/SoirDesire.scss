@@ -62,7 +62,7 @@
 
 .soir__text--title {
   font-size: clamp(20px, 2.56vw, 36.87px);
-  line-height: 46.4px;
+  line-height: clamp(28px, 3.6vw, 46.4px);
   letter-spacing: 0.13em;
   display: block;
   white-space: normal;
@@ -71,8 +71,8 @@
 }
 
 .soir__text--subtitle {
-  font-size: clamp(10px, 0.76vw, 10.98px);
-  line-height: 13.8px;
+  font-size: clamp(10px, 0.76vw, 15.98px);
+  line-height: clamp(12px, 1.1vw, 13.8px);
   letter-spacing: 0.13em;
   margin-top: clamp(4px, 0.8vh, 12px);
   margin-bottom: clamp(80px, 8vh, 80px);
