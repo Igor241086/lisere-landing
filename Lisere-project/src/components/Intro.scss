@@ -4,41 +4,46 @@
 .intro {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-block: clamp(60px, 8vh, 120px);
 }
 
 .intro__content {
-  position: relative;
-  z-index: 2;
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(60px, 8vh, 120px);
 }
 
 .intro__centered-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  gap: clamp(24px, 4vh, 48px);
+
+  padding-block: clamp(40px, 8vh, 80px); // задаём отступ сверху/снизу
+
+  > *:not(:last-child) {
+    margin-bottom: clamp(24px, 4vh, 64px); // между блоками
+  }
 }
 
 .intro__video-wrapper {
-  width: clamp(320px, 65vw, 960px);
-  height: clamp(180px, 45vh, 540px);
-  z-index: 1;
+  width: clamp(320px, 80vw, 1140px);
+  height: clamp(180px, 30vh, 400px);
   overflow: hidden;
 
   img,
   video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: $image-object-fit;
     display: block;
   }
 }
@@ -46,42 +51,79 @@
 .intro__columns {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: clamp(16px, 3vw, 48px);
+  justify-content: center;
+  align-items: flex-start;
+  column-gap: clamp(40px, 5vw, 80px);
+  row-gap: clamp(32px, 4vh, 64px);
   width: 100%;
-  max-width: 1080px;
+  max-width: clamp(320px, 80vw, 1140px);
 }
 
 .intro__column {
-  flex: 1 1 30%;
-  min-width: 260px;
-
+  width: clamp(260px, 22vw, 300px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   font-family: $font-body;
-  font-size: clamp(14px, 1.4vw, 18px);
-  color: $color-black;
+  font-size: clamp(14px, 1.3vw, 17px);
   line-height: 1.5;
+  color: $color-black;
   opacity: 0.85;
+}
 
-  h3 {
-    font-size: clamp(16px, 24px, 22px);
-    font-weight: 600;
-    margin-bottom: 8px;
-    line-height: 1.2;
-  }
+.intro__headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.2;
+  letter-spacing: 0.11em;
+  margin-bottom: clamp(12px, 1vh, 16px);
+  color: $color-black;
+  text-align: center;
+}
 
-  p {
-    margin: 0;
-  }
+.intro__text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 17px);
+  line-height: 1.6;
+  letter-spacing: 0.07em;
+  text-align: left;
+  color: $color-black;
+  opacity: 0.85;
+}
+
+.intro__scroll-hint-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-block: clamp(24px, 4vh, 48px);
+  height: clamp(60px, 6vh, 80px);
+  grid-column: 7 / span 3;
 }
 
 .intro__scroll-hint {
-  font-family: $font-body;
-  font-size: clamp(12px, 1vw, 16px);
-  color: $color-subtext;
-  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(80px, 9vw, 108px);
+  height: clamp(18px, 2.5vh, 22px);
+  background-color: rgba(10, 10, 10, 0.7);
+  border-radius: clamp(2px, 0.5vw, 3px);
+}
+
+.intro__scroll-hint-text {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(13px, 1.3vw, 15px);
+  line-height: 1;
+  color: $color-white;
+  letter-spacing: 0.07em;
   text-align: center;
-  animation: fadeUp 1s forwards;
-  animation-delay: 2s;
-  transform: translateY(20px);
+}
+
+.hidden-hint {
   opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
