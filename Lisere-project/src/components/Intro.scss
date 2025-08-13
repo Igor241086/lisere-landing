@@ -8,7 +8,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   padding: 0;
 }
@@ -129,5 +128,7 @@
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }

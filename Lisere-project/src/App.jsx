@@ -11,6 +11,7 @@ import RendezVousElegant from './components/RendezVousElegant.jsx';
 import LookDeTousLesJours from './components/LookDeTousLesJours.jsx';
 
 import MoodSketch from './components/MoodSketch.jsx';
+import InConclusion from './components/InConclusion.jsx';
 
 import sketchSoirDesire from './assets/images/soir-desire-sketch-75.webp';
 import sketchCodeVestimentaire from './assets/images/code-vestimentaire-sketch-75.webp';
@@ -90,6 +91,8 @@ function App() {
                 <MoodSketch image={sketch.image} alt={sketch.alt} />
               </React.Fragment>
             ))}
+
+            <InConclusion />
           </>
         )}
       </main>
