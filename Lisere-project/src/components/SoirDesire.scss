@@ -3,8 +3,10 @@
 
 .soir {
   position: relative;
-  height: 100vh;
-  width: 100%;
+  height: 100svh;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -13,22 +15,33 @@
 
 .soir__background {
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
   z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.soir__content {
-  position: relative;
-  z-index: 2;
+.soir__bgInner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  will-change: transform;
+}
+
+.soir__image {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .soir__overlay {
@@ -36,10 +49,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   width: auto;
   max-width: clamp(282px, 30vw, 438px);
   padding: 0 clamp(16px, 2vw, 24px);
+  opacity: 0;
+}
+
+.soir__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 .soir__text-block {
@@ -55,29 +76,20 @@
   font-weight: 600;
   color: $color-white;
   line-height: 1.2;
-
-  white-space: normal;
-  letter-spacing: -0.2px;
   text-align: center;
 }
 
 .soir__text--title {
   font-size: clamp(20px, 2.56vw, 36.87px);
-  line-height: clamp(28px, 3.6vw, 46.4px);
-  letter-spacing: 0.13em;
-  display: block;
-  white-space: normal;
   margin-bottom: clamp(4px, 0.8vh, 12px);
-  text-align: center;
+  letter-spacing: 0.13em;
 }
 
 .soir__text--subtitle {
   font-size: clamp(10px, 0.76vw, 15.98px);
-  line-height: clamp(12px, 1.1vw, 13.8px);
-  letter-spacing: 0.13em;
   margin-top: clamp(4px, 0.8vh, 12px);
   margin-bottom: clamp(80px, 8vh, 80px);
-  text-align: center;
+  letter-spacing: 0.13em;
 }
 
 .soir__description {
@@ -85,25 +97,26 @@
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-
-  width: auto;
   max-width: clamp(240px, 27.5vw, 396px);
-
   font-size: clamp(16px, 1.29vw, 18.58px);
   line-height: clamp(16px, 1.4vw, 21px);
   letter-spacing: 0.21em;
   color: $color-subtext;
   white-space: pre-line;
   text-align: left;
-
   margin: 0;
   padding: 0;
 }
-
 .soir__description p {
   margin: 0 0 22px;
 }
 
 .soir__description p:last-child {
   margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soir__bgInner {
+    transform: translate(-50%, -50%) !important;
+  }
 }
