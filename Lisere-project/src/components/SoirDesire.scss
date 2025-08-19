@@ -15,22 +15,16 @@
 
 .soir__background {
   position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 100%;
+  inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
 }
 
 .soir__bgInner {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 100%;
+  height: 100%;
   will-change: transform;
 }
 
@@ -52,7 +46,6 @@
   width: auto;
   max-width: clamp(282px, 30vw, 438px);
   padding: 0 clamp(16px, 2vw, 24px);
-  opacity: 0;
 }
 
 .soir__content {
@@ -60,7 +53,6 @@
   z-index: 2;
   width: 100%;
   height: 100%;
-  opacity: 0;
 }
 
 .soir__text-block {
