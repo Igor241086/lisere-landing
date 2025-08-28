@@ -1,27 +1,63 @@
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import PropTypes from 'prop-types';
 
-const ParallaxSection = ({ image, children }) => {
-  const ref = useRef(null);
-
+const ParallaxBackground = ({ targetRef, image, className }) => {
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: targetRef,
     offset: ['start end', 'end start'],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
 
   return (
-    <section className="soir" ref={ref}>
-      <motion.div className="soir__background" style={{ y }} aria-hidden="true">
-        <div className="soir__bgInner">
-          <img className="soir__image" src={image} alt="" />
+    <motion.div className={`${className}__background`} style={{ y }} aria-hidden="true">
+      <div className={`${className}__bgInner`}>
+        <img className={`${className}__image`} src={image} alt="" />
+      </div>
+    </motion.div>
+  );
+};
+
+ParallaxBackground.propTypes = {
+  targetRef: PropTypes.object.isRequired,
+  image: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+};
+
+const ParallaxSection = ({ image, children, className }) => {
+  const ref = useRef(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return (
+    <section
+      ref={ref}
+      className={`parallax-section ${className || ''}`}
+      style={{ position: 'relative' }}
+    >
+      {mounted ? (
+        <ParallaxBackground targetRef={ref} image={image} className={className || 'parallax'} />
+      ) : (
+        <div className={`${className}__background`} aria-hidden="true">
+          <div className={`${className}__bgInner`}>
+            <img className={`${className}__image`} src={image} alt="" />
+          </div>
         </div>
-      </motion.div>
+      )}
 
       {children}
     </section>
   );
+};
+
+ParallaxSection.propTypes = {
+  image: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default ParallaxSection;

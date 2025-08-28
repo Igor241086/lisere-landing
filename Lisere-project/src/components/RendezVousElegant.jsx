@@ -1,6 +1,6 @@
 import React from 'react';
 import './RendezVousElegant.scss';
-import image from '../assets/images/rendez-vous-Elegant-image-75.webp';
+import image from '../assets/images/rendez-vous-elegant-image-75.webp';
 
 const RendezVousElegant = () => (
   <section className="rendezvous">

@@ -29,22 +29,13 @@ const sketches = [
 ];
 
 const statements = [
-  {
-    text: 'LET US DRAW YOUR ATTENTION TO...',
-    gridClass: 'col-start-2 col-span-13',
-  },
-  {
-    text: 'IS TEMPTATION THEIR ONLY PURPOSE?',
-    gridClass: 'col-start-4 col-span-9',
-  },
+  { text: 'LET US DRAW YOUR ATTENTION TO...', gridClass: 'col-start-2 col-span-13' },
+  { text: 'IS TEMPTATION THEIR ONLY PURPOSE?', gridClass: 'col-start-4 col-span-9' },
   {
     text: 'FOR THE ELEGANT EVENING — ONLY THE FINEST DETAILS...',
     gridClass: 'col-start-3 col-span-11',
   },
-  {
-    text: 'AND WHAT OF EVERYDAY ELEGANCE?',
-    gridClass: 'col-start-5 col-span-7',
-  },
+  { text: 'AND WHAT OF EVERYDAY ELEGANCE?', gridClass: 'col-start-5 col-span-7' },
 ];
 
 const sections = [

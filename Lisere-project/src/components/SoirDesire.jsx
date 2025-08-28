@@ -14,7 +14,7 @@ const SoirDesire = () => {
   }, [controls, inView]);
 
   return (
-    <ParallaxSection image={image}>
+    <ParallaxSection image={image} className="soir">
       <motion.div
         ref={ref}
         className="grid-15x13 soir__content"

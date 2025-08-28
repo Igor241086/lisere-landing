@@ -1,6 +1,7 @@
 import React from 'react';
 import './CodeVestimentaire.scss';
 import image from '../assets/images/сode-vestimentaire-image-75.webp';
+import ParallaxSection from './ParallaxSection';
 
 const CodeVestimentaire = () => (
   <section className="code">

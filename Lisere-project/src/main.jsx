@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import './styles/main.scss';
 
-import Lenis from 'lenis';
+import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -27,32 +27,25 @@ function Root() {
     }
     requestAnimationFrame(raf);
 
-    ScrollTrigger.scrollerProxy(document.scrollingElement || document.documentElement, {
+    ScrollTrigger.scrollerProxy(document.documentElement, {
       scrollTop(value) {
         if (arguments.length) {
           lenis.scrollTo(value, { immediate: true });
         }
-        return lenis && lenis.scroll && lenis.scroll.instance
-          ? lenis.scroll.instance.scroll.y
-          : window.scrollY;
+        return lenis.scroll.instance?.scroll?.y ?? window.scrollY;
       },
       getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
       },
       pinType: document.scrollingElement.style.transform ? 'transform' : 'fixed',
     });
 
-    ScrollTrigger.addEventListener('refresh', () => lenis.update());
+    ScrollTrigger.addEventListener('refresh', () => {});
 
     ScrollTrigger.refresh();
 
     return () => {
-      ScrollTrigger.removeEventListener('refresh', () => lenis.update());
+      ScrollTrigger.removeEventListener('refresh', () => {});
       lenis.destroy();
     };
   }, []);
@@ -60,8 +53,10 @@ function Root() {
   return <App />;
 }
 
+export default Root;
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <Root />
   </StrictMode>,
 );
