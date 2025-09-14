@@ -1,7 +1,8 @@
-// CodeVestimentaire.jsx
 import React from 'react';
 import './CodeVestimentaire.scss';
-import image from '../assets/images/сode-vestimentaire-image-75.webp';
+import avif from '../assets/images/code-vestimentaire-image-75.avif';
+import webp from '../assets/images/code-vestimentaire-image-75.webp';
+import lqip from '../assets/images/code-vestimentaire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -15,7 +16,7 @@ const CodeVestimentaire = () => {
   }, [controls, inView]);
 
   return (
-    <ParallaxSection image={image} className="code">
+    <ParallaxSection className="code" avif={avif} webp={webp} lqip={lqip}>
       <motion.div
         ref={ref}
         className="grid-15x13 code__content"

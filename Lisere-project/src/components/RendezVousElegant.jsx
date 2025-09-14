@@ -1,6 +1,8 @@
 import React from 'react';
 import './RendezVousElegant.scss';
-import image from '../assets/images/rendez-vous-elegant-image-75.webp';
+import avif from '../assets/images/rendez-vous-elegant-image-75.avif';
+import webp from '../assets/images/rendez-vous-elegant-image-75.webp';
+import lqip from '../assets/images/rendez-vous-elegant-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -14,10 +16,10 @@ const RendezVousElegant = () => {
   }, [controls, inView]);
 
   return (
-    <ParallaxSection image={image} className="soir">
+    <ParallaxSection className="rendezvous" avif={avif} webp={webp} lqip={lqip}>
       <motion.div
         ref={ref}
-        className="grid-15x13 soir__content"
+        className="grid-15x13 rendezvous__content"
         initial="hidden"
         animate={controls}
         variants={{

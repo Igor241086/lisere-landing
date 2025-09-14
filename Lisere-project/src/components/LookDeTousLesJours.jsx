@@ -1,6 +1,8 @@
 import React from 'react';
 import './LookDeTousLesJours.scss';
-import image from '../assets/images/look-de-tous-les-jours-image-75.webp';
+import avif from '../assets/images/look-de-tous-les-jours-image-75.avif';
+import webp from '../assets/images/look-de-tous-les-jours-image-75.webp';
+import lqip from '../assets/images/look-de-tous-les-jours-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -14,10 +16,10 @@ const LookDeTousLesJours = () => {
   }, [controls, inView]);
 
   return (
-    <ParallaxSection image={image} className="soir">
+    <ParallaxSection className="look" avif={avif} webp={webp} lqip={lqip}>
       <motion.div
         ref={ref}
-        className="grid-15x13 soir__content"
+        className="grid-15x13 look__content"
         initial="hidden"
         animate={controls}
         variants={{
@@ -34,31 +36,28 @@ const LookDeTousLesJours = () => {
             <h2 className="look__text look__text--title">“Look de tous les jours”</h2>
             <p className="look__text look__text--subtitle">(“Everyday look”)</p>
             <p className="look__description">
-              She’s not in a hurry.
+              She doesn’t chase time — it moves around her.
               <br />
               <br />
-              Success has already happened — now it’s about pleasure.
+              Success is no longer a destination; it’s the air she breathes.
               <br />
               <br />
-              Luxury lives in the little things:
+              Luxury is silence behind tinted glass,
               <br />
-              in the soft shine of lipstick,
+              the weight of a dress cut to perfection,
               <br />
-              in a expensive car,
-              <br />
-              in a takeaway coffee,
-              <br />
-              in a perfectly chosen detail.
+              the quiet line of lace where fabric meets skin.
               <br />
               <br />
-              This look isn’t for attention.
-              <br />
-              It’s for herself.
-              <br />
-              Chic that doesn’t scream — it simply is.
+              There is no need to be seen — only to be felt.
               <br />
               <br />
-              Because every day is a moment of magnificence.
+              Chic does not announce itself;
+              <br />
+              it endures.
+              <br />
+              <br />
+              Every day is not routine but ritual — a private magnificence known only to her.
             </p>
           </div>
         </div>

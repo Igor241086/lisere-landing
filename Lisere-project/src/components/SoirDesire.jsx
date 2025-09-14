@@ -1,6 +1,8 @@
 import React from 'react';
 import './SoirDesire.scss';
-import image from '../assets/images/soir-desire-image-75.webp';
+import avif from '../assets/images/soir-desire-image-75.avif';
+import webp from '../assets/images/soir-desire-image-75.webp';
+import lqip from '../assets/images/soir-desire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -14,7 +16,7 @@ const SoirDesire = () => {
   }, [controls, inView]);
 
   return (
-    <ParallaxSection image={image} className="soir">
+    <ParallaxSection className="soir" avif={avif} webp={webp} lqip={lqip}>
       <motion.div
         ref={ref}
         className="grid-15x13 soir__content"

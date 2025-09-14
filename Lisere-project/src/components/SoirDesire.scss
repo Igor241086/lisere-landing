@@ -29,13 +29,55 @@
 }
 
 .soir__image {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 46%;
-  user-select: none;
-  -webkit-user-drag: none;
+  transition: opacity 0.6s ease;
+}
+
+.soir__loader {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 2s infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.soir__image.lqip {
+  filter: blur(20px);
+  transform: scale(1.05);
+  transition: opacity 0.6s ease;
+}
+
+.soir__image.full {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.soir__image.full.visible {
+  opacity: 1;
+}
+
+.soir__image.lqip.hidden {
+  opacity: 0;
 }
 
 .soir__overlay {
