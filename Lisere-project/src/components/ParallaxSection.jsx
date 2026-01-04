@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-const ParallaxBackground = ({ targetRef, avif, webp, lqip, className }) => {
+const ParallaxBackground = ({ targetRef, avif, webp, lqip, className, onLoad }) => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ['start end', 'end start'],
@@ -11,9 +11,13 @@ const ParallaxBackground = ({ targetRef, avif, webp, lqip, className }) => {
   const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    if (loaded && onLoad) onLoad(true);
+  }, [loaded, onLoad]);
+
   return (
-    <motion.div className={`${className}__background`} style={{ y }} aria-hidden="true">
-      <div className={`${className}__bgInner`}>
+    <div className={`${className}__background`} aria-hidden="true">
+      <motion.div className={`${className}__bgInner`} style={{ y }}>
         {!loaded && <div className={`${className}__loader`} />}
 
         <img
@@ -33,8 +37,8 @@ const ParallaxBackground = ({ targetRef, avif, webp, lqip, className }) => {
             onLoad={() => setLoaded(true)}
           />
         </picture>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
@@ -44,6 +48,7 @@ ParallaxBackground.propTypes = {
   webp: PropTypes.string.isRequired,
   lqip: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
+  onLoad: PropTypes.func,
 };
 
 const ParallaxSection = ({ avif, webp, lqip, children, className }) => {
@@ -58,7 +63,7 @@ const ParallaxSection = ({ avif, webp, lqip, children, className }) => {
     <section
       ref={ref}
       className={`parallax-section ${className || ''}`}
-      style={{ position: 'relative' }}
+      style={{ position: 'relative', overflow: 'hidden' }}
     >
       {mounted ? (
         <ParallaxBackground
@@ -75,6 +80,18 @@ const ParallaxSection = ({ avif, webp, lqip, children, className }) => {
           </div>
         </div>
       )}
+      <motion.div
+        className={`${className}__headlights`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: mounted ? 1 : 0 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+      >
+        <div className={`${className}__beam ${className}__beam--left`} />
+        <div className={`${className}__beam ${className}__beam--right`} />
+        <div className={`${className}__glow ${className}__glow--left`} />
+        <div className={`${className}__glow ${className}__glow--right`} />
+      </motion.div>
+
       {children}
     </section>
   );

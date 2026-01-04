@@ -52,7 +52,6 @@ const InConclusion = () => {
                 href: 'https://www.linkedin.com/in/ihor-mahats-0b1046287/',
                 icon: <FaLinkedinIn />,
               },
-              { href: 'https://www.instagram.com/igor241086/', icon: <FaInstagram /> },
             ].map((item, i) => (
               <motion.a
                 key={i}
@@ -68,7 +67,7 @@ const InConclusion = () => {
           </motion.div>
 
           <motion.div className="in-conclusion__footer-text" custom={3} variants={itemVariants}>
-            © 2025 Lisière · Concept by Igor241086 · Designed &amp; Coded by hand
+            © 2025-2026 Lisière · Concept by Igor241086 · Designed &amp; Coded by hand
           </motion.div>
         </div>
       </motion.div>
