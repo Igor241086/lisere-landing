@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './InConclusion.scss';
 import ParallaxSection from './ParallaxSection';
 import heroBg from '../assets/images/hero-bg-75.webp';
 
-import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const InConclusion = () => {
+function InConclusion() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
 
@@ -25,7 +26,7 @@ const InConclusion = () => {
   };
 
   return (
-    <ParallaxSection image={heroBg} className="in-conclusion">
+    <ParallaxSection avif={heroBg} webp={heroBg} lqip={heroBg} className="in-conclusion">
       <motion.div
         ref={ref}
         className="grid-15x13 in-conclusion__content"
@@ -73,6 +74,11 @@ const InConclusion = () => {
       </motion.div>
     </ParallaxSection>
   );
+}
+
+InConclusion.propTypes = {
+  setIsBlurred: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
 };
 
 export default InConclusion;
