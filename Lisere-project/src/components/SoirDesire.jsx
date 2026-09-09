@@ -1,7 +1,7 @@
 import React from 'react';
 import './SoirDesire.scss';
-import avif from '../assets/images/soir-desire-image-75.avif';
-import webp from '../assets/images/soir-desire-image-75.webp';
+import avif from '../assets/images/soir-desire-image-65.avif';
+import webp from '../assets/images/soir-desire-image-85.webp';
 import lqip from '../assets/images/soir-desire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';

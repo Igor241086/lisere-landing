@@ -26,9 +26,19 @@
   width: 100%;
   height: 100%;
   will-change: transform;
+
+  picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .in-conclusion__image {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -36,6 +46,25 @@
   object-position: center center;
   user-select: none;
   -webkit-user-drag: none;
+  transition: transform 0.3s ease;
+
+  &.lqip {
+    z-index: 1;
+    opacity: 1;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  &.full {
+    z-index: 2;
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
 }
 
 .in-conclusion__content {

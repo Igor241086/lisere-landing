@@ -1,7 +1,7 @@
 import React from 'react';
 import './CodeVestimentaire.scss';
-import avif from '../assets/images/code-vestimentaire-image-75.avif';
-import webp from '../assets/images/code-vestimentaire-image-75.webp';
+import avif from '../assets/images/code-vestimentaire-image-65.avif';
+import webp from '../assets/images/code-vestimentaire-image-85.webp';
 import lqip from '../assets/images/code-vestimentaire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';

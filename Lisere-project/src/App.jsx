@@ -17,7 +17,7 @@ import sketchSoirDesire from './assets/images/soir-desire-sketch-75.webp';
 import sketchCodeVestimentaire from './assets/images/code-vestimentaire-sketch-75.webp';
 import sketchRendezVousElegant from './assets/images/rendezvous-elegant-sketch-75.webp';
 import sketchLookDeTousLesJours from './assets/images/look-de-tous-les-jours-sketch-75.webp';
-import heroBg from './assets/images/hero-bg-75.webp';
+import heroBg from './assets/images/hero-bg-85.webp';
 
 import './styles/main.scss';
 

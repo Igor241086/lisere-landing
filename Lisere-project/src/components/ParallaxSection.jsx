@@ -80,17 +80,6 @@ const ParallaxSection = ({ avif, webp, lqip, children, className }) => {
           </div>
         </div>
       )}
-      <motion.div
-        className={`${className}__headlights`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: mounted ? 1 : 0 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-      >
-        <div className={`${className}__beam ${className}__beam--left`} />
-        <div className={`${className}__beam ${className}__beam--right`} />
-        <div className={`${className}__glow ${className}__glow--left`} />
-        <div className={`${className}__glow ${className}__glow--right`} />
-      </motion.div>
 
       {children}
     </section>

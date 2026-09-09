@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './InConclusion.scss';
 import ParallaxSection from './ParallaxSection';
-import heroBg from '../assets/images/hero-bg-75.webp';
+import webp from '../assets/images/hero-bg-85.webp';
+import avif from '../assets/images/hero-bg-65.avif';
+import lqip from '../assets/images/hero-bg-lqip.webp';
 
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
@@ -26,15 +27,19 @@ function InConclusion() {
   };
 
   return (
-    <ParallaxSection avif={heroBg} webp={heroBg} lqip={heroBg} className="in-conclusion">
+    <ParallaxSection className="in-conclusion" avif={avif} webp={webp} lqip={lqip}>
       <motion.div
         ref={ref}
         className="grid-15x13 in-conclusion__content"
         initial="hidden"
         animate={controls}
         variants={{
-          hidden: {},
-          visible: {},
+          hidden: { opacity: 0, y: 30 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.9, ease: 'easeOut' },
+          },
         }}
       >
         <div className="col-start-2 col-span-13 in-conclusion__bottom">
@@ -75,10 +80,5 @@ function InConclusion() {
     </ParallaxSection>
   );
 }
-
-InConclusion.propTypes = {
-  setIsBlurred: PropTypes.func.isRequired,
-  onNext: PropTypes.func.isRequired,
-};
 
 export default InConclusion;

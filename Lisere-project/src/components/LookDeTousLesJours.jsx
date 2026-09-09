@@ -1,7 +1,7 @@
 import React from 'react';
 import './LookDeTousLesJours.scss';
-import avif from '../assets/images/look-de-tous-les-jours-image-75.avif';
-import webp from '../assets/images/look-de-tous-les-jours-image-75.webp';
+import avif from '../assets/images/look-de-tous-les-jours-image-65.avif';
+import webp from '../assets/images/look-de-tous-les-jours-image-85.webp';
 import lqip from '../assets/images/look-de-tous-les-jours-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';

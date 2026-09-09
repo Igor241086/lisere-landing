@@ -1,7 +1,7 @@
 import React from 'react';
 import './RendezVousElegant.scss';
-import avif from '../assets/images/rendez-vous-elegant-image-75.avif';
-import webp from '../assets/images/rendez-vous-elegant-image-75.webp';
+import avif from '../assets/images/rendez-vous-elegant-image-65.avif';
+import webp from '../assets/images/rendez-vous-elegant-image-85.webp';
 import lqip from '../assets/images/rendez-vous-elegant-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion, useAnimation } from 'framer-motion';

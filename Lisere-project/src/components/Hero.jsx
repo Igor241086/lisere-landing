@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Hero.scss';
 import HeroBg from './common/HeroBg.jsx';
-import heroBg from '../assets/images/hero-bg-75.webp';
+import heroBg from '../assets/images/hero-bg-85.webp';
 
 const Hero = ({ setIsBlurred, onNext }) => {
   const [loaded, setLoaded] = useState(false);
