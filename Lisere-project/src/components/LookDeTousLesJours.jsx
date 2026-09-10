@@ -1,19 +1,13 @@
-import React from 'react';
 import './LookDeTousLesJours.scss';
 import avif from '../assets/images/look-de-tous-les-jours-image-65.avif';
 import webp from '../assets/images/look-de-tous-les-jours-image-85.webp';
 import lqip from '../assets/images/look-de-tous-les-jours-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { useSectionReveal } from './hooks/useSectionReveal';
 
 const LookDeTousLesJours = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
-
-  React.useEffect(() => {
-    if (inView) controls.start('visible');
-  }, [controls, inView]);
+  const [ref, controls] = useSectionReveal();
 
   return (
     <ParallaxSection className="look" avif={avif} webp={webp} lqip={lqip}>

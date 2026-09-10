@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Hero.scss';
 import HeroBg from './common/HeroBg.jsx';
 import heroBg from '../assets/images/hero-bg-85.webp';
+import { useImagePreload } from './hooks/useImagePreload.js';
 
 const Hero = ({ setIsBlurred, onNext }) => {
-  const [loaded, setLoaded] = useState(false);
+  const loaded = useImagePreload(heroBg);
   const [isExiting, setIsExiting] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = heroBg;
-    img.onload = () => setLoaded(true);
-  }, []);
 
   const handleClick = () => {
     setIsExiting(true);

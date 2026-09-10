@@ -1,19 +1,13 @@
-import React from 'react';
 import './CodeVestimentaire.scss';
 import avif from '../assets/images/code-vestimentaire-image-65.avif';
 import webp from '../assets/images/code-vestimentaire-image-85.webp';
 import lqip from '../assets/images/code-vestimentaire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { useSectionReveal } from './hooks/useSectionReveal';
 
 const CodeVestimentaire = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
-
-  React.useEffect(() => {
-    if (inView) controls.start('visible');
-  }, [controls, inView]);
+  const [ref, controls] = useSectionReveal();
 
   return (
     <ParallaxSection className="code" avif={avif} webp={webp} lqip={lqip}>

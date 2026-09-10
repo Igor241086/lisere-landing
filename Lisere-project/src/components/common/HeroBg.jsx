@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import './HeroBg.scss';
 import bgImage from '../../assets/images/hero-bg-85.webp';

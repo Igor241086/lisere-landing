@@ -1,19 +1,13 @@
-import React from 'react';
 import './SoirDesire.scss';
 import avif from '../assets/images/soir-desire-image-65.avif';
 import webp from '../assets/images/soir-desire-image-85.webp';
 import lqip from '../assets/images/soir-desire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { useSectionReveal } from './hooks/useSectionReveal';
 
 const SoirDesire = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
-
-  React.useEffect(() => {
-    if (inView) controls.start('visible');
-  }, [controls, inView]);
+  const [ref, controls] = useSectionReveal();
 
   return (
     <ParallaxSection className="soir" avif={avif} webp={webp} lqip={lqip}>

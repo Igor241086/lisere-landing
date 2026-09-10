@@ -1,4 +1,3 @@
-import React from 'react';
 import './InConclusion.scss';
 import ParallaxSection from './ParallaxSection';
 import webp from '../assets/images/hero-bg-85.webp';
@@ -6,16 +5,11 @@ import avif from '../assets/images/hero-bg-65.avif';
 import lqip from '../assets/images/hero-bg-lqip.webp';
 
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { useSectionReveal } from './hooks/useSectionReveal';
 
 function InConclusion() {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
-
-  React.useEffect(() => {
-    if (inView) controls.start('visible');
-  }, [controls, inView]);
+  const [ref, controls] = useSectionReveal();
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
