@@ -1,4 +1,3 @@
-import React from 'react';
 import './InConclusion.scss';
 import ParallaxSection from './ParallaxSection';
 import webp from '../assets/images/hero-bg-85.webp';
@@ -9,7 +8,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useSectionReveal } from '../hooks/useSectionReveal';
 
-const InConclusion = () => {
+function InConclusion() {
   const [ref, controls] = useSectionReveal();
 
   const itemVariants = {
@@ -37,26 +36,6 @@ const InConclusion = () => {
           },
         }}
       >
-        <div className="col-start-2 col-span-13 in-conclusion__top">
-          <motion.h2 className="in-conclusion__title" custom={0} variants={itemVariants}>
-            Inspired by the Concept?
-          </motion.h2>
-
-          <motion.p className="in-conclusion__subtitle" custom={1} variants={itemVariants}>
-            Explore our full line of custom stockings and find your perfect pair.
-          </motion.p>
-
-          <motion.div
-            className="in-conclusion__button-container"
-            custom={2}
-            variants={itemVariants}
-          >
-            <button type="button" className="in-conclusion__button">
-              DISCOVER MORE
-            </button>
-          </motion.div>
-        </div>
-
         <div className="col-start-2 col-span-13 in-conclusion__bottom">
           <motion.div
             className="in-conclusion__icons"
@@ -94,6 +73,6 @@ const InConclusion = () => {
       </motion.div>
     </ParallaxSection>
   );
-};
+}
 
 export default InConclusion;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Hero.scss';
 import HeroBg from './common/HeroBg.jsx';
 import heroBg from '../assets/images/hero-bg-85.webp';
-import { useImagePreload } from './hooks/useImagePreload.js';
+import { useImagePreload } from '../hooks/useImagePreload.js';
 
 const Hero = ({ setIsBlurred, onNext }) => {
   const loaded = useImagePreload(heroBg);

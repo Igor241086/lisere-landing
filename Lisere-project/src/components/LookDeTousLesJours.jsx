@@ -4,7 +4,7 @@ import webp from '../assets/images/look-de-tous-les-jours-image-85.webp';
 import lqip from '../assets/images/look-de-tous-les-jours-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion } from 'framer-motion';
-import { useSectionReveal } from './hooks/useSectionReveal';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
 const LookDeTousLesJours = () => {
   const [ref, controls] = useSectionReveal();

@@ -4,7 +4,7 @@ import webp from '../assets/images/code-vestimentaire-image-85.webp';
 import lqip from '../assets/images/code-vestimentaire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion } from 'framer-motion';
-import { useSectionReveal } from './hooks/useSectionReveal';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
 const CodeVestimentaire = () => {
   const [ref, controls] = useSectionReveal();

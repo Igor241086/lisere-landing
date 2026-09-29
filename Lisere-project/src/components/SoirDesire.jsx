@@ -4,7 +4,7 @@ import webp from '../assets/images/soir-desire-image-85.webp';
 import lqip from '../assets/images/soir-desire-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion } from 'framer-motion';
-import { useSectionReveal } from './hooks/useSectionReveal';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
 const SoirDesire = () => {
   const [ref, controls] = useSectionReveal();

@@ -4,7 +4,7 @@ import Hero from './components/Hero.jsx';
 import Intro from './components/Intro.jsx';
 import HeroBg from './components/common/HeroBg.jsx';
 import StatementBlock from './components/StatementBlock.jsx';
-import { useImagePreload } from './components/hooks/useImagePreload.js';
+import { useImagePreload } from './hooks/useImagePreload.js';
 
 import SoirDesire from './components/SoirDesire.jsx';
 import CodeVestimentaire from './components/CodeVestimentaire.jsx';

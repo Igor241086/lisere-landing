@@ -34,7 +34,7 @@ export function useLenisScroll() {
       pinType: document.scrollingElement.style.transform ? 'transform' : 'fixed',
     });
 
-    const handleRefresh = () => {}; // именованная ссылка — теперь снимается корректно
+    const handleRefresh = () => {};
     ScrollTrigger.addEventListener('refresh', handleRefresh);
     ScrollTrigger.refresh();
 

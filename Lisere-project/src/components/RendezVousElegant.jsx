@@ -4,7 +4,7 @@ import webp from '../assets/images/rendez-vous-elegant-image-85.webp';
 import lqip from '../assets/images/rendez-vous-elegant-image-lqip.webp';
 import ParallaxSection from './ParallaxSection';
 import { motion } from 'framer-motion';
-import { useSectionReveal } from './hooks/useSectionReveal';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
 const RendezVousElegant = () => {
   const [ref, controls] = useSectionReveal();
