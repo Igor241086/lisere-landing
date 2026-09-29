@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/assets/images/logo.svg" alt="LISIÈRE" width="180" />
+<img src="Lisere-project/src/assets/images/logo.svg" alt="LISIÈRE" width="180" />
 
 # LISIÈRE — When Form Follows Emotions
 
@@ -16,9 +16,6 @@
 ![Status](https://img.shields.io/badge/Status-In_development-orange?style=flat-square)
 ![Figma](https://img.shields.io/badge/Designed_in-Figma-F24E1E?logo=figma&logoColor=white&style=flat-square)
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000?logo=vercel&logoColor=white&style=flat-square)
-
-<!-- Add a screenshot or GIF: docs/preview.png -->
-<!-- <img src="docs/preview.png" alt="LISIÈRE landing preview" width="900" /> -->
 
 </div>
 
