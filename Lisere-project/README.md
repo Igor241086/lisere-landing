@@ -53,12 +53,12 @@ It is also a front-end showcase: a hand-crafted, animation-rich landing page bui
 
 The story is told through four collections, each introduced by a bold statement block, a full-screen parallax scene and a technical sketch:
 
-| Collection | Translation | Mood |
-| --- | --- | --- |
-| **Soir Désiré** | *Desired evening* | A private evening ritual — white marble, candlelight, silk. |
-| **Code Vestimentaire** | *Dress code* | Refinement hidden beneath office precision. |
-| **Rendez-vous Élégant** | *Elegant meeting* | Velvet shadows, crystal, golden accents; dignity over fashion. |
-| **Look de tous les jours** | *Everyday look* | Quiet luxury — every day as ritual, not routine. |
+| Collection                 | Translation       | Mood                                                           |
+| -------------------------- | ----------------- | -------------------------------------------------------------- |
+| **Soir Désiré**            | _Desired evening_ | A private evening ritual — white marble, candlelight, silk.    |
+| **Code Vestimentaire**     | _Dress code_      | Refinement hidden beneath office precision.                    |
+| **Rendez-vous Élégant**    | _Elegant meeting_ | Velvet shadows, crystal, golden accents; dignity over fashion. |
+| **Look de tous les jours** | _Everyday look_   | Quiet luxury — every day as ritual, not routine.               |
 
 > Technical sketches are intentionally shown as a preview only: the designs are still under development.
 
@@ -76,10 +76,10 @@ The layouts and visual system were designed in **Figma** before being implemente
 
 **Typography**
 
-| Role | Font |
-| --- | --- |
-| Headings | Abril Fatface |
-| Body | DM Sans |
+| Role         | Font             |
+| ------------ | ---------------- |
+| Headings     | Abril Fatface    |
+| Body         | DM Sans          |
 | Descriptions | Instrument Serif |
 
 ## Features
@@ -96,17 +96,17 @@ The layouts and visual system were designed in **Figma** before being implemente
 
 ## Tech stack
 
-| Area | Technology |
-| --- | --- |
-| UI | React 19, PropTypes |
-| Build tool | Vite 8 (`@vitejs/plugin-react`) |
-| Styling | SCSS via `sass-embedded` (variables, grid, per-component modules) |
-| Design | Figma |
-| Animation | Framer Motion, GSAP + ScrollTrigger |
-| Smooth scroll | Lenis (`@studio-freight/lenis`) |
-| Utilities | `react-intersection-observer`, `react-icons` |
-| Quality | ESLint 10, Prettier 3, Husky |
-| Hosting | Vercel |
+| Area          | Technology                                                        |
+| ------------- | ----------------------------------------------------------------- |
+| UI            | React 19, PropTypes                                               |
+| Build tool    | Vite 8 (`@vitejs/plugin-react`)                                   |
+| Styling       | SCSS via `sass-embedded` (variables, grid, per-component modules) |
+| Design        | Figma                                                             |
+| Animation     | Framer Motion, GSAP + ScrollTrigger                               |
+| Smooth scroll | Lenis (`@studio-freight/lenis`)                                   |
+| Utilities     | `react-intersection-observer`, `react-icons`                      |
+| Quality       | ESLint 10, Prettier 3, Husky                                      |
+| Hosting       | Vercel                                                            |
 
 ## Getting started
 
@@ -133,13 +133,13 @@ The app will be available at `http://localhost:5173`.
 
 ### Available scripts
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Create a production build in `dist/` |
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the Vite development server    |
+| `npm run build`   | Create a production build in `dist/` |
 | `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format the codebase with Prettier |
+| `npm run lint`    | Run ESLint                           |
+| `npm run format`  | Format the codebase with Prettier    |
 
 ## Project structure
 
@@ -188,11 +188,11 @@ lisere-landing/
 
 The project is deployed on **Vercel**.
 
-| Setting | Value |
-| --- | --- |
-| Framework preset | Vite |
-| Build command | `npm run build` |
-| Output directory | `dist` |
+| Setting          | Value           |
+| ---------------- | --------------- |
+| Framework preset | Vite            |
+| Build command    | `npm run build` |
+| Output directory | `dist`          |
 
 ## Status & roadmap
 
@@ -223,6 +223,6 @@ The project is **in active development**. The live demo reflects the current sta
 
 <div align="center">
 
-*Chic does not announce itself.*
+_Chic does not announce itself._
 
 </div>

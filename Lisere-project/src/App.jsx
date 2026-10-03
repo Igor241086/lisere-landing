@@ -14,19 +14,46 @@ import LookDeTousLesJours from './components/LookDeTousLesJours.jsx';
 import MoodSketch from './components/MoodSketch.jsx';
 import InConclusion from './components/InConclusion.jsx';
 
-import sketchSoirDesire from './assets/images/soir-desire-sketch-75.webp';
-import sketchCodeVestimentaire from './assets/images/code-vestimentaire-sketch-75.webp';
-import sketchRendezVousElegant from './assets/images/rendezvous-elegant-sketch-75.webp';
-import sketchLookDeTousLesJours from './assets/images/look-de-tous-les-jours-sketch-75.webp';
+import sketchSoirDesire1 from './assets/images/soir-desire-sketch-1-75.png';
+import sketchSoirDesire2 from './assets/images/soir-desire-sketch-2-75.png';
+import sketchSoirDesire3 from './assets/images/soir-desire-sketch-3-75.png';
+import sketchCodeVestimentaire1 from './assets/images/code-vestimentaire-sketch-1-75.png';
+import sketchCodeVestimentaire2 from './assets/images/code-vestimentaire-sketch-2-75.png';
+import sketchRendezVousElegant3 from './assets/images/rendezvous-elegant-sketch-1-75.png';
+import sketchRendezVousElegant1 from './assets/images/rendezvous-elegant-sketch-2-75.png';
+import sketchRendezVousElegant2 from './assets/images/rendezvous-elegant-sketch-3-75.png';
+import sketchLookDeTousLesJours1 from './assets/images/look-de-tous-les-jours-sketch-1-85.webp';
+import sketchLookDeTousLesJours2 from './assets/images/look-de-tous-les-jours-sketch-2-85.webp';
+import sketchLookDeTousLesJours3 from './assets/images/look-de-tous-les-jours-sketch-3-85.webp';
 import heroBg from './assets/images/hero-bg-85.webp';
 
 import './styles/main.scss';
 
 const sketches = [
-  { image: sketchSoirDesire, alt: 'Soir Désiré technical sketch' },
-  { image: sketchCodeVestimentaire, alt: 'Code Vestimentaire technical sketch' },
-  { image: sketchRendezVousElegant, alt: 'Rendez-vous Élégant technical sketch' },
-  { image: sketchLookDeTousLesJours, alt: 'Look de tous les jours technical sketch' },
+  {
+    images: [{ src: sketchSoirDesire1 }, { src: sketchSoirDesire2 }, { src: sketchSoirDesire3 }],
+    alt: 'Soir Désiré technical sketch',
+  },
+  {
+    images: [{ src: sketchCodeVestimentaire1 }, { src: sketchCodeVestimentaire2 }],
+    alt: 'Code Vestimentaire technical sketch',
+  },
+  {
+    images: [
+      { src: sketchRendezVousElegant1 },
+      { src: sketchRendezVousElegant2 },
+      { src: sketchRendezVousElegant3 },
+    ],
+    alt: 'Rendez-vous Élégant technical sketch',
+  },
+  {
+    images: [
+      { src: sketchLookDeTousLesJours1 },
+      { src: sketchLookDeTousLesJours2 },
+      { src: sketchLookDeTousLesJours3 },
+    ],
+    alt: 'Look de tous les jours technical sketch',
+  },
 ];
 
 const statements = [
@@ -74,7 +101,7 @@ function App() {
               <React.Fragment key={i}>
                 <StatementBlock text={statements[i].text} gridClass={statements[i].gridClass} />
                 <Component />
-                <MoodSketch image={sketch.image} alt={sketch.alt} />
+                <MoodSketch images={sketch.images} alt={sketch.alt} />
               </React.Fragment>
             ))}
 

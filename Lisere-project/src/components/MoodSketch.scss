@@ -1,32 +1,77 @@
-@use '../styles/layout/grid' as *;
 @use '../styles/abstracts/variables' as *;
 
 .mood-sketch {
+  // соотношение сторон фото (ширина / высота) — подставьте своё, когда будут готовые макеты
+  --photo-ratio: 9 / 16;
+  --photo-w: clamp(110px, 17vw, 240px);
+  --photo-overlap: calc(var(--photo-w) * -0.12);
+
   width: 100%;
   padding: clamp(40px, 8vw, 96px) 0;
-  text-align: center;
 
-  &__image-wrapper {
-    max-width: 100%;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(24px, 5vw, 96px);
+    max-width: $container-max-width;
+    margin: 0 auto;
     padding: 0 clamp(16px, 4vw, 64px);
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
   }
 
   &__caption {
-    margin-top: clamp(24px, 4vh, 48px);
+    flex: 0 1 clamp(160px, 16vw, 230px);
     font-family: $font-body;
-    font-size: clamp(14px, 1.3vw, 18px);
-    color: $color-black;
+    font-size: clamp(11px, 1vw, 14px);
     line-height: 1.5;
+    text-align: center;
+    color: $color-black;
     opacity: 0.7;
 
     p {
-      margin: 0 0 12px 0;
+      margin: 0 0 12px;
+    }
+  }
+
+  &__stack {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    flex: 0 0 auto;
+    width: var(--photo-w);
+    aspect-ratio: var(--photo-ratio);
+    margin: 0;
+    overflow: hidden;
+    box-shadow:
+      0 12px 28px rgba(0, 0, 0, 0.18),
+      0 2px 6px rgba(0, 0, 0, 0.12);
+    will-change: transform, opacity;
+
+    & + & {
+      margin-left: var(--photo-overlap);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 767px) {
+    --photo-w: clamp(90px, 28vw, 150px);
+
+    &__inner {
+      flex-direction: column-reverse;
+      gap: 32px;
+    }
+
+    &__caption {
+      flex: none;
+      max-width: 280px;
     }
   }
 }

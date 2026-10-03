@@ -91,7 +91,7 @@
   font-family: $font-heading;
   font-size: clamp(28px, 3.4vw, 48px);
   color: $color-white;
-  text-shadow: $hero-text-shadow;
+  // text-shadow: $hero-text-shadow;
   letter-spacing: 0.01em;
   line-height: 1.1;
   margin: 0;
@@ -158,7 +158,7 @@
 }
 
 .in-conclusion__icons a {
-  color: $color-black;
+  color: $color-white;
   font-size: clamp(20px, 2.5vw, 32px);
   transition: opacity 0.3s ease;
 }
@@ -170,7 +170,7 @@
 .in-conclusion__footer-text {
   font-family: $font-body;
   font-size: clamp(12px, 1.2vw, 14px);
-  color: $color-black;
+  color: $color-white;
   opacity: 0.8;
 }
 
