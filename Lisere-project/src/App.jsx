@@ -5,6 +5,7 @@ import Intro from './components/Intro.jsx';
 import HeroBg from './components/common/HeroBg.jsx';
 import StatementBlock from './components/StatementBlock.jsx';
 import { useImagePreload } from './hooks/useImagePreload.js';
+import Preloader from './components/Preloader/Preloader.jsx';
 
 import SoirDesire from './components/SoirDesire.jsx';
 import CodeVestimentaire from './components/CodeVestimentaire.jsx';
@@ -84,6 +85,7 @@ function App() {
   const loaded = useImagePreload(heroBg);
   const [isBlurred, setIsBlurred] = useState(false);
   const [currentPage, setCurrentPage] = useState('hero');
+  const [revealed, setRevealed] = useState(false);
 
   const handleLogoClick = () => {
     setCurrentPage('hero');
@@ -92,11 +94,12 @@ function App() {
 
   return (
     <>
+      <Preloader assets={[heroBg]} onReveal={() => setRevealed(true)} />
       <HeroBg loaded={loaded} isBlurred={isBlurred} />
       <Header onLogoClick={handleLogoClick} />
 
       <main>
-        {currentPage === 'hero' && (
+        {currentPage === 'hero' && revealed && (
           <Hero setIsBlurred={setIsBlurred} onNext={() => setCurrentPage('intro')} />
         )}
 
