@@ -14,14 +14,16 @@ import LookDeTousLesJours from './components/LookDeTousLesJours.jsx';
 import MoodSketch from './components/MoodSketch.jsx';
 import InConclusion from './components/InConclusion.jsx';
 
-import sketchSoirDesire1 from './assets/images/soir-desire-sketch-1-75.png';
-import sketchSoirDesire2 from './assets/images/soir-desire-sketch-2-75.png';
-import sketchSoirDesire3 from './assets/images/soir-desire-sketch-3-75.png';
-import sketchCodeVestimentaire1 from './assets/images/code-vestimentaire-sketch-1-75.png';
-import sketchCodeVestimentaire2 from './assets/images/code-vestimentaire-sketch-2-75.png';
-import sketchRendezVousElegant3 from './assets/images/rendezvous-elegant-sketch-1-75.png';
-import sketchRendezVousElegant1 from './assets/images/rendezvous-elegant-sketch-2-75.png';
-import sketchRendezVousElegant2 from './assets/images/rendezvous-elegant-sketch-3-75.png';
+import sketchSoirDesire1 from './assets/images/soir-desire-sketch-1-85.webp';
+import sketchSoirDesire2 from './assets/images/soir-desire-sketch-2-85.webp';
+import sketchSoirDesire3 from './assets/images/soir-desire-sketch-3-85.webp';
+import sketchCodeVestimentaire1 from './assets/images/code-vestimentaire-sketch-1-85.webp';
+import sketchCodeVestimentaire2 from './assets/images/code-vestimentaire-sketch-2-85.webp';
+import sketchCodeVestimentaire3 from './assets/images/code-vestimentaire-sketch-3-85.webp';
+import sketchCodeVestimentaire4 from './assets/images/code-vestimentaire-sketch-4-85.webp';
+import sketchRendezVousElegant1 from './assets/images/rendezvous-elegant-sketch-1-85.webp';
+import sketchRendezVousElegant2 from './assets/images/rendezvous-elegant-sketch-2-85.webp';
+import sketchRendezVousElegant3 from './assets/images/rendezvous-elegant-sketch-3-85.webp';
 import sketchLookDeTousLesJours1 from './assets/images/look-de-tous-les-jours-sketch-1-85.webp';
 import sketchLookDeTousLesJours2 from './assets/images/look-de-tous-les-jours-sketch-2-85.webp';
 import sketchLookDeTousLesJours3 from './assets/images/look-de-tous-les-jours-sketch-3-85.webp';
@@ -35,7 +37,12 @@ const sketches = [
     alt: 'Soir Désiré technical sketch',
   },
   {
-    images: [{ src: sketchCodeVestimentaire1 }, { src: sketchCodeVestimentaire2 }],
+    images: [
+      { src: sketchCodeVestimentaire1 },
+      { src: sketchCodeVestimentaire2 },
+      { src: sketchCodeVestimentaire3 },
+      { src: sketchCodeVestimentaire4 },
+    ],
     alt: 'Code Vestimentaire technical sketch',
   },
   {
