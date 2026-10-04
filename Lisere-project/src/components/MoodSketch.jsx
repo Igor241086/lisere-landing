@@ -55,11 +55,28 @@ const MoodSketch = ({ images, alt }) => {
           tl.fromTo(el, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.7, ease: 'power1.out' }, at);
         });
 
+        const skeleton = stackRef.current.querySelector('.mood-sketch__skeleton');
+        gsap.utils.toArray('.mood-sketch__placeholder', skeleton).forEach((el, i) => {
+          const { rotation, y } = POSES[i % POSES.length];
+          gsap.set(el, { rotation, y });
+        });
+
         const imgs = gsap.utils.toArray('img', stackRef.current);
+        let alive = true;
         let inView = false;
         let loaded = false;
+        let played = false;
+        let skeletonTween = null;
+
+        const play = () => {
+          if (played || !alive) return;
+          played = true;
+          if (skeletonTween) skeletonTween.kill();
+          gsap.to(skeleton, { autoAlpha: 0, duration: 0.4, ease: 'power1.out' });
+          tl.play();
+        };
         const tryPlay = () => {
-          if (inView && loaded) tl.play();
+          if (inView && loaded) play();
         };
 
         Promise.all(imgs.map((img) => img.decode().catch(() => {}))).then(() => {
@@ -73,9 +90,21 @@ const MoodSketch = ({ images, alt }) => {
           once: true,
           onEnter: () => {
             inView = true;
+            if (!loaded) {
+              skeletonTween = gsap.to(skeleton, {
+                autoAlpha: 1,
+                duration: 0.4,
+                delay: 0.25,
+                ease: 'power1.out',
+              });
+            }
             tryPlay();
           },
         });
+
+        return () => {
+          alive = false;
+        };
       },
       rootRef,
     );
@@ -95,6 +124,11 @@ const MoodSketch = ({ images, alt }) => {
         </div>
 
         <div className="mood-sketch__stack" ref={stackRef}>
+          <div className="mood-sketch__skeleton" aria-hidden="true">
+            {images.map((_, i) => (
+              <span className="mood-sketch__placeholder" key={i} />
+            ))}
+          </div>
           {images.map(({ src, alt: imgAlt }, i) => (
             <figure className="mood-sketch__photo" key={`${src}-${i}`}>
               <img

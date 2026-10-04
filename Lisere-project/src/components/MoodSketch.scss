@@ -1,7 +1,6 @@
 @use '../styles/abstracts/variables' as *;
 
 .mood-sketch {
-  // соотношение сторон фото (ширина / высота) — подставьте своё, когда будут готовые макеты
   --photo-ratio: 9 / 16;
   --photo-w: clamp(110px, 17vw, 240px);
   --photo-overlap: calc(var(--photo-w) * -0.12);
@@ -34,8 +33,33 @@
   }
 
   &__stack {
+    position: relative;
     display: flex;
     align-items: center;
+  }
+
+  &__skeleton {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__placeholder {
+    flex: 0 0 auto;
+    width: var(--photo-w);
+    aspect-ratio: var(--photo-ratio);
+    background: linear-gradient(100deg, #e2dfe2 30%, #f4f2f4 50%, #e2dfe2 70%);
+    background-size: 200% 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: mood-sketch-shimmer 1.6s linear infinite;
+
+    & + & {
+      margin-left: var(--photo-overlap);
+    }
   }
 
   &__photo {
@@ -73,5 +97,20 @@
       flex: none;
       max-width: 280px;
     }
+  }
+}
+
+@keyframes mood-sketch-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mood-sketch__placeholder {
+    animation: none;
   }
 }
