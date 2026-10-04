@@ -37,14 +37,16 @@ const InConclusion = () => {
           },
         }}
       >
-        <div className="col-start-2 col-span-13 in-conclusion__top">
-          <motion.h2 className="in-conclusion__title" custom={0} variants={itemVariants}>
-            Inspired by the Concept?
-          </motion.h2>
+        <div className="in-conclusion__top">
+          <div className="in-conclusion__heading">
+            <motion.h2 className="in-conclusion__title" custom={0} variants={itemVariants}>
+              Inspired by the Concept?
+            </motion.h2>
 
-          <motion.p className="in-conclusion__subtitle" custom={1} variants={itemVariants}>
-            Explore our full line of custom stockings and find your perfect pair.
-          </motion.p>
+            <motion.p className="in-conclusion__subtitle" custom={1} variants={itemVariants}>
+              Explore our full line of custom stockings and find your perfect pair.
+            </motion.p>
+          </div>
 
           <motion.div
             className="in-conclusion__button-container"
@@ -57,38 +59,39 @@ const InConclusion = () => {
           </motion.div>
         </div>
 
-        <div className="col-start-2 col-span-13 in-conclusion__bottom">
+        <div className="in-conclusion__bottom">
+          <motion.div className="in-conclusion__footer-text" custom={3} variants={itemVariants}>
+            © 2025-2026 Lisière · Concept by Igor241086 · Designed &amp; Coded by hand
+          </motion.div>
+
           <motion.div
             className="in-conclusion__icons"
             initial="hidden"
             animate={controls}
             variants={{
               hidden: {},
-              visible: { transition: { staggerChildren: 0.2 } },
+              visible: { transition: { staggerChildren: 0.2, delayChildren: 0.8 } },
             }}
           >
             {[
-              { href: 'https://github.com/Igor241086', icon: <FaGithub /> },
               {
                 href: 'https://www.linkedin.com/in/ihor-mahats-0b1046287/',
+                label: 'LinkedIn',
                 icon: <FaLinkedinIn />,
               },
-            ].map((item, i) => (
+              { href: 'https://github.com/Igor241086', label: 'GitHub', icon: <FaGithub /> },
+            ].map((item) => (
               <motion.a
-                key={i}
+                key={item.label}
                 href={item.href}
+                aria-label={item.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                custom={i}
                 variants={itemVariants}
               >
                 {item.icon}
               </motion.a>
             ))}
-          </motion.div>
-
-          <motion.div className="in-conclusion__footer-text" custom={3} variants={itemVariants}>
-            © 2025-2026 Lisière · Concept by Igor241086 · Designed &amp; Coded by hand
           </motion.div>
         </div>
       </motion.div>
